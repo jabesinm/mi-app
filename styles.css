@@ -1,0 +1,56 @@
+:root{
+  --bg: #fff8f0;
+  --primary: #ff6b6b;
+  --accent: #4ecdc4;
+  --muted: #6c757d;
+}
+html,body{
+  height:100%;
+  margin:0;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  background:var(--bg);
+  color:#333;
+}
+.app{
+  max-width:760px;
+  margin:18px auto;
+  padding:18px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.06);
+  background:linear-gradient(180deg, #fff, #fff8f0);
+  border-radius:12px;
+}
+header{ text-align:center }
+h1{ margin:6px 0 }
+.subtitle{ color:var(--muted); margin:0 0 12px }
+.controls{ margin-top:8px }
+#sound-toggle{ padding:6px 10px; border-radius:8px; border:0; background:#f0f0f0; cursor:pointer }
+#controls button{ margin-left:8px }
+#qr-btn{ padding:6px 10px; border-radius:8px; border:0; background:#f0f0f0; cursor:pointer }
+
+/* Modal QR */
+.modal{ position:fixed; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.4); z-index:60 }
+.modal-content{ background:white; padding:16px; border-radius:10px; max-width:320px; width:90%; text-align:center }
+.modal-close{ position:absolute; right:18px; top:18px; border:0; background:transparent; font-size:18px; cursor:pointer }
+.qr-image img{ max-width:100%; height:auto }
+.muted{ color:var(--muted); font-size:0.9rem }
+.qr-download{ display:inline-block; margin-top:8px; padding:8px 12px; background:#4ecdc4; color:white; border-radius:8px; text-decoration:none }
+.qr-download.hidden{ display:none }
+.screen{ padding:12px }
+.hidden{ display:none }
+.big-btn{ display:block; width:100%; padding:18px; font-size:1.2rem; border-radius:10px; margin:8px 0; border:0; background:var(--accent); color:white }
+.choices{ display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin:12px 0 }
+.choice{ width:96px; height:96px; border-radius:12px; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 4px 10px rgba(0,0,0,0.08); }
+.shape{ width:64px; height:64px; display:inline-block }
+.circle{ border-radius:50% }
+.square{ border-radius:8px }
+.triangle{ width:0; height:0; border-left:32px solid transparent; border-right:32px solid transparent; border-bottom:64px solid #333 }
+.back-btn{ margin-top:12px; padding:8px 12px; border-radius:8px; border:0; background:#ddd }
+.feedback{ text-align:center; min-height:36px; font-weight:700 }
+.feedback.good{ color:green }
+.feedback.bad{ color:red }
+footer{ text-align:center; color:var(--muted); font-size:0.8rem; margin-top:8px }
+
+@media (prefers-reduced-motion: no-preference){
+  .choice{ transition: transform .12s ease; }
+  .choice:active{ transform: scale(.98); }
+}

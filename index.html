@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Juegos - Educación Inicial</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Juegos para niños de 4 años</h1>
+      <p class="subtitle">Colores, Formas y Contar — Toca o haz clic para jugar</p>
+      <div class="controls">
+        <button id="sound-toggle" aria-pressed="false" title="Activar/Desactivar sonidos">🔊 Sonidos</button>
+        <button id="qr-btn" title="Generar QR">🔗 QR</button>
+      </div>
+    </header>
+
+    <!-- QR modal -->
+    <div id="qr-modal" class="modal hidden" role="dialog" aria-modal="true" aria-label="Código QR">
+      <div class="modal-content">
+        <button id="qr-close" class="modal-close" aria-label="Cerrar">✖</button>
+        <h3>Escanea con tu móvil</h3>
+        <div id="qr-image" class="qr-image"></div>
+        <a id="qr-download" class="qr-download hidden" download="qr.png">⬇ Descargar PNG</a>
+        <p class="muted">Si la app está en tu PC local, comparte la URL o sirve la carpeta por HTTP.</p>
+      </div>
+    </div>
+
+    <main>
+      <section id="menu" class="screen">
+        <button class="big-btn" data-game="colores">Jugar: Colores</button>
+        <button class="big-btn" data-game="formas">Jugar: Formas</button>
+        <button class="big-btn" data-game="contar">Jugar: Contar</button>
+      </section>
+
+      <section id="colores" class="screen hidden">
+        <h2>Colores</h2>
+        <p class="instruction">Toca el color: <span id="target-color-name">Rojo</span></p>
+        <div id="colors-row" class="choices"></div>
+        <button class="back-btn">Volver</button>
+      </section>
+
+      <section id="formas" class="screen hidden">
+        <h2>Formas</h2>
+        <p class="instruction">Selecciona la forma: <span id="target-shape-name">Círculo</span></p>
+        <div id="shapes-row" class="choices"></div>
+        <button class="back-btn">Volver</button>
+      </section>
+
+      <section id="contar" class="screen hidden">
+        <h2>Contar</h2>
+        <p class="instruction">¿Cuántos hay?</p>
+        <div id="count-items" class="choices"></div>
+        <div id="count-answers" class="choices"></div>
+        <button class="back-btn">Volver</button>
+      </section>
+
+      <div id="feedback" class="feedback" aria-live="polite"></div>
+    </main>
+
+    <footer>
+      <small>Creado para educación inicial — App simple</small>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="vendor/qrcode.min.js"></script>
+</body>
+</html>
