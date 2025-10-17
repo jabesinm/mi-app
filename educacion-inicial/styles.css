@@ -11,6 +11,26 @@ html,body{
   background:var(--bg);
   color:#333;
 }
+.big-btn {
+  font-family: "Poppins", sans-serif; /* tipo de letra */
+  font-size: 20px;                    /* tamaño del texto */
+  font-weight: bold;                  /* texto en negrita */
+  color: white;                       /* color del texto */
+  background-color: #2b6cb0;          /* color de fondo */
+  border: none;                       /* sin borde */
+  border-radius: 10px;                /* bordes redondeados */
+  padding: 15px 25px;                 /* espacio interno */
+  margin: 10px;                       /* separación entre botones */
+  cursor: pointer;                    /* cambia el puntero al pasar */
+  transition: all 0.3s ease;          /* animación suave */
+}
+
+/* Efecto al pasar el mouse */
+.big-btn:hover {
+  background-color: #e84118;  /* fondo más oscuro */
+  color: #2f3640;             /* cambia el color del texto */
+  transform: scale(1.05);     /* se agranda ligeramente */
+}
 .app{
   max-width:760px;
   margin:18px auto;
@@ -53,4 +73,5 @@ footer{ text-align:center; color:var(--muted); font-size:0.8rem; margin-top:8px 
 @media (prefers-reduced-motion: no-preference){
   .choice{ transition: transform .12s ease; }
   .choice:active{ transform: scale(.98); }
+
 }
